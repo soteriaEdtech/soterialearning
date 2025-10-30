@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import { Menu } from '@headlessui/react';
 import { useState } from 'react';
+import logo from '../public/logos/main.jpg';
+import Image from 'next/image';
 
 const navigation = [
   { name: 'Solutions', href: '/solutions' },
@@ -20,8 +22,9 @@ export default function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="shrink-0">
-            <Link href="/" className="font-bold text-xl text-white">
-              Soteria Learning
+            <Link href="/" className="font-bold text-xl text-white flex items-center gap-2">
+              {/* <Image src={logo} alt="logo" className='w-8'/> */}
+             <p> Soteria Learning </p>
             </Link>
           </div>
           

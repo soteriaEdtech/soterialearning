@@ -1,6 +1,25 @@
 "use client";
 import { motion } from "framer-motion";
 import { Calendar, Shield, Clock, Send } from "lucide-react";
+import { useForm, SubmitHandler } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup'; 
+import emailjs from '@emailjs/browser';
+
+type FormData = yup.InferType<typeof schema>;
+
+const schema = yup.object({
+  name: yup.string().required('Name is required'),
+  email: yup.string().email('Invalid email').required('Email is required'),
+  organization: yup.string().nullable().default(null),
+  role: yup.string().nullable().default(null),
+  goals: yup.string().required('Project goals are required'),
+  audience: yup.string().nullable().default(null),
+  budget: yup.string().required('Budget range is required'),
+  timeline: yup.string().nullable().default(null),
+  accessibility: yup.string().nullable().default(null),
+  languages: yup.array().of(yup.string()).default([]),
+}).required();
 
 export default function ContactPage() {
   const fadeInUp = {
@@ -19,6 +38,49 @@ export default function ContactPage() {
     "$50,000 - $100,000",
     "$100,000+"
   ];
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      name: '',
+      email: '',
+      organization: null,
+      role: null,
+      goals: '',
+      audience: null,
+      budget: '',
+      timeline: null,
+      accessibility: null,
+      languages: [],
+    },
+  });
+
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    console.log(data);
+    return;
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', '#myForm').then(
+  (response) => {
+    console.log('SUCCESS!', response.status, response.text);
+  },
+  (error) => {
+    console.log('FAILED...', error);
+  },
+);
+  };
+
+emailjs.init({
+  publicKey: 'YOUR_PUBLIC_KEY',
+  // Do not allow headless browsers
+  blockHeadless: true, 
+  limitRate: { 
+    id: 'app', 
+    throttle: 10000,
+  },
+});
 
   return (
     <div className="min-h-screen">
@@ -71,7 +133,7 @@ export default function ContactPage() {
             transition={{ delay: 0.2 }}
             className="lg:col-span-2"
           >
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
               {/* Basic Information */}
               <div className="space-y-6">
                 <h2 className="text-xl font-semibold text-gray-900">Basic Information</h2>
@@ -83,8 +145,10 @@ export default function ContactPage() {
                     <input
                       type="text"
                       id="name"
+                      {...register('name')}
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     />
+                    {errors.name && <p style={{ color: 'red', fontSize: '14px', marginTop: '4px' }}>{errors.name.message}</p>}
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -93,8 +157,10 @@ export default function ContactPage() {
                     <input
                       type="email"
                       id="email"
+                      {...register('email')}
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                    />
+                    /> 
+                    {errors.email && <p style={{ color: 'red', fontSize: '14px', marginTop: '4px' }}>{errors.email.message}</p>}
                   </div>
                   <div>
                     <label htmlFor="organization" className="block text-sm font-medium text-gray-700">
@@ -103,8 +169,10 @@ export default function ContactPage() {
                     <input
                       type="text"
                       id="organization"
+                      {...register('organization')}
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                    />
+                    /> 
+                    {errors.organization && <p style={{ color: 'red', fontSize: '14px', marginTop: '4px' }}>{errors.organization.message}</p>}
                   </div>
                   <div>
                     <label htmlFor="role" className="block text-sm font-medium text-gray-700">
@@ -113,8 +181,10 @@ export default function ContactPage() {
                     <input
                       type="text"
                       id="role"
+                      {...register('role')}
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     />
+                    {errors.role && <p style={{ color: 'red', fontSize: '14px', marginTop: '4px' }}>{errors.role.message}</p>}
                   </div>
                 </div>
               </div>
@@ -129,9 +199,11 @@ export default function ContactPage() {
                   <textarea
                     id="goals"
                     rows={4}
+                    {...register('goals')}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     placeholder="Describe your project objectives and desired outcomes..."
                   />
+                  {errors.goals && <p style={{ color: 'red', fontSize: '14px', marginTop: '4px' }}>{errors.goals.message}</p>}
                 </div>
 
                 <div>
@@ -141,9 +213,11 @@ export default function ContactPage() {
                   <textarea
                     id="audience"
                     rows={2}
+                    {...register('audience')}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     placeholder="Who is this content for?"
                   />
+                  {errors.audience && <p style={{ color: 'red', fontSize: '14px', marginTop: '4px' }}>{errors.audience.message}</p>}
                 </div>
 
                 <div>
@@ -155,12 +229,15 @@ export default function ContactPage() {
                       <label key={language} className="flex items-center">
                         <input
                           type="checkbox"
+                          {...register('languages')}
+                          value={language}
                           className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                         />
                         <span className="ml-2 text-sm text-gray-600">{language}</span>
                       </label>
                     ))}
                   </div>
+                {errors.languages && <p style={{ color: 'red', fontSize: '14px', marginTop: '4px' }}>{errors.languages.message}</p>}
                 </div>
 
                 <div className="grid gap-6 sm:grid-cols-2">
@@ -170,6 +247,7 @@ export default function ContactPage() {
                     </label>
                     <select
                       id="budget"
+                      {...register('budget')}
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     >
                       <option value="">Select a range</option>
@@ -179,6 +257,7 @@ export default function ContactPage() {
                         </option>
                       ))}
                     </select>
+                    {errors.budget && <p style={{ color: 'red', fontSize: '14px', marginTop: '4px' }}>{errors.budget.message}</p>}
                   </div>
                   <div>
                     <label htmlFor="timeline" className="block text-sm font-medium text-gray-700">
@@ -187,9 +266,11 @@ export default function ContactPage() {
                     <input
                       type="text"
                       id="timeline"
+                      {...register('timeline')}
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                       placeholder="e.g., 3 months, Q1 2026"
                     />
+                    {errors.timeline && <p style={{ color: 'red', fontSize: '14px', marginTop: '4px' }}>{errors.timeline.message}</p>}
                   </div>
                 </div>
 
@@ -200,9 +281,11 @@ export default function ContactPage() {
                   <textarea
                     id="accessibility"
                     rows={2}
+                    {...register('accessibility')}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     placeholder="Any specific accessibility standards or requirements?"
                   />
+                  {errors.accessibility && <p style={{ color: 'red', fontSize: '14px', marginTop: '4px' }}>{errors.accessibility.message}</p>}
                 </div>
               </div>
 
@@ -211,7 +294,7 @@ export default function ContactPage() {
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
               >
                 <Send className="h-4 w-4" />
-                Submit Request
+                Submit 
               </button>
             </form>
           </motion.div>

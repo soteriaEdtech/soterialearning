@@ -8,70 +8,69 @@ import {
 const services = [
   {
     id: "course-development",
-    title: "Course Development",
+    title: "Custom E-Learning Development",
     icon: BookOpen,
-    description: "Custom e-learning courses designed for maximum engagement and retention.",
+    description: "Move beyond static presentations and create truly engaging learning experiences that drive results.",
     features: [
-      "Interactive learning paths",
-      "Gamification elements",
-      "Mobile-first design",
-      "Assessment modules"
+      "Get courses tailored exactly to your objectives, audience, and brand identity.",
+      "We incorporate rich media, animations, and scenarios to hold learner attention.",
+      "Boost engagement and retention with competitive elements and safe-to-fail virtual practice environments.",
+      "Ensure your courses are fully responsive and accessible on any device, anytime."
     ],
     gradient: "from-blue-500 to-cyan-500",
     delay: 0.1
   },
   {
-    id: "multimedia-video",
-    title: "Multimedia & Video",
+    id: "e-learning-outsourcing",
+    title: "Strategic E-Learning Outsourcing",
     icon: Film,
-    description: "Engaging multimedia content that brings learning to life.",
+    description: "Scale your development capacity instantly without compromising on quality or budget.",
     features: [
-      "Professional video production",
-      "Animation creation",
-      "Interactive simulations",
-      "Audio narration"
+      "We handle everything from concept to deployment, freeing up your internal teams.",
+      "Quickly access specialized Instructional Designers, graphic artists, and developers to meet tight deadlines.",
+      "Implement flexible outsourcing models that optimize your budget and reduce overhead costs.",
+      "Receive long-term project stability and a committed team for ongoing content updates and maintenance."
     ],
     gradient: "from-purple-500 to-pink-500",
     delay: 0.2
   },
   {
-    id: "localization",
-    title: "Localization & Accessibility",
+    id: "online-cource-development",
+    title: "Online Course Development",
     icon: Globe,
-    description: "Make your content accessible to learners worldwide.",
+    description: "Whether you're building a massive online course (MOOC) or internal training, we provide the building blocks for success.",
     features: [
-      "Multi-language support",
-      "Cultural adaptation",
-      "WCAG 2.1 compliance",
-      "Screen reader optimization"
+      "Produce professional, high-quality lessons optimized for digital delivery and consumption.",
+      "Design robust evaluation tools and formal certification paths to validate knowledge mastery.",
+      "Ensure seamless technical deployment and user tracking with expert integration into your existing Learning Management System."
     ],
     gradient: "from-emerald-500 to-teal-500",
     delay: 0.3
   },
   {
-    id: "sme-collaboration",
-    title: "SME Collaboration",
+    id: "global-content-localization",
+    title: "Global Content Localization",
     icon: Users,
-    description: "Seamless collaboration with subject matter experts.",
+    description: "Make your training accessible and culturally relevant to every employee and learner, no matter their location.",
     features: [
-      "Expert content review",
-      "Knowledge capture",
-      "Industry validation",
-      "Quality assurance"
+      "Go beyond direct translation; we adapt content to resonate with local customs, contexts, and sensitivities.",
+      "Provide professional audio and video tracks in various languages for inclusive learning.",
+      "Ensure your materials adhere to local standards, regulations, and reporting requirements.",
+      "Rigorous quality assurance to guarantee flawless presentation and functionality in every region."
     ],
     gradient: "from-orange-500 to-amber-500",
     delay: 0.4
   },
   {
-    id: "ai-consulting",
-    title: "AI-driven Consulting",
+    id: "ai-driven-instructional-design",
+    title: "AI-Driven Instructional Design",
     icon: BrainCircuit,
-    description: "Leverage AI to optimize your learning strategy.",
+    description: "Leverage cutting-edge technology to create highly effective, personalized learning paths with unparalleled efficiency.",
     features: [
-      "Learning analytics",
-      "Personalization engines",
-      "Automated assessments",
-      "Adaptive learning paths"
+      "Use data-driven insights to define objectives and structure the most effective learning journey.",
+      "Develop detailed blueprints that align every piece of content with a specific learning outcome.",
+      "Apply methodologies that prioritize the user experience, maximizing engagement and practical application of knowledge.",
+      "Implement robust systems to measure content effectiveness and continuously iterate for improvement."
     ],
     gradient: "from-indigo-500 to-blue-500",
     delay: 0.5
@@ -100,23 +99,22 @@ export default function ServicesPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mx-auto max-w-2xl text-center"
+            className="mx-auto max-w-2xl text-center break-keep"
           >
             <motion.h1
               variants={fadeInUp}
               className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl"
             >
-              Comprehensive{" "}
+             Your End-to-End <br/> {" "}
               <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                Learning Services
+                E-Learning Solution Partner
               </span>
             </motion.h1>
             <motion.p
               variants={fadeInUp}
               className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"
             >
-              From course development to AI-driven solutions, we offer end-to-end services
-              to transform your learning programs.
+              Transforming traditional content into dynamic, accessible, and measurable digital learning experiences requires specialized expertise. We offer a full spectrum of services to empower your organization, whether you need a single custom course or a scalable, long-term development partner.
             </motion.p>
           </motion.div>
         </div>
@@ -175,7 +173,7 @@ export default function ServicesPage() {
                 whileHover={{ x: 4 }}
               >
                 <a
-                  href={`/services/${service.id}`}
+                  href={"/contact"}
                   className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-500"
                 >
                   Learn more
@@ -186,6 +184,50 @@ export default function ServicesPage() {
           ))}
         </div>
       </div>
+
+          {/* Instructional Design Academy (IDA) table */}
+          <div className="mt-16 py-12">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <div className="rounded-2xl bg-linear-to-r from-blue-600 to-cyan-600 p-8 shadow ring-1 ring-blue-700">
+                <h3 className="text-2xl font-bold text-white">Instructional Design Academy (IDA)</h3>
+                <p className="mt-2 text-white/90">Invest in your team’s capability to build and manage world-class digital learning internally.</p>
+
+                <div className="mt-6 overflow-x-auto">
+                  <table className="min-w-full table-auto divide-y divide-blue-500/20">
+                    <thead className="bg-white">
+                      <tr>
+                        <th scope="col" className="px-4 py-3 text-left text-sm font-semibold text-blue-600">Academy Focus</th>
+                        <th scope="col" className="px-4 py-3 text-left text-sm font-semibold text-blue-600">Key Takeaways</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-transparent divide-y divide-blue-500/20">
+                      <tr>
+                        <td className="px-4 py-4 align-top text-sm text-white">E-Learning Development</td>
+                        <td className="px-4 py-4 text-sm text-white/90">Hands-on training in industry-leading authoring tools (e.g., Articulate, Captivate, Canva) to create professional digital courses.</td>
+                      </tr>
+
+                      <tr>
+                        <td className="px-4 py-4 align-top text-sm text-white">Content Authoring Workshops</td>
+                        <td className="px-4 py-4 text-sm text-white/90">Practical sessions on creating and editing powerful multimedia content — video, infographics, and interactive simulations.</td>
+                      </tr>
+
+                      <tr>
+                        <td className="px-4 py-4 align-top text-sm text-white">Instructional Technology Integration</td>
+                        <td className="px-4 py-4 text-sm text-white/90">Mastery of leveraging LMS features, AI tools, and gamification principles to enhance learning design and delivery.</td>
+                      </tr>
+
+                      <tr>
+                        <td className="px-4 py-4 align-top text-sm text-white">Portfolio Development &amp; Mentorship</td>
+                        <td className="px-4 py-4 text-sm text-white/90">Guidance on building a professional instructional design portfolio and a defined career path with coaching and certification.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         
 
       {/* Contact CTA Section */}
       <div className="relative isolate bg-linear-to-b from-gray-50 to-white py-16 dark:from-gray-900 dark:to-gray-800">

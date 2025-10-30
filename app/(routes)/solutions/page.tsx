@@ -29,13 +29,11 @@ const personas = [
     id: "corporate",
     title: "Corporate Organizations",
     icon: Building2,
-    description: "Transform your workforce training with customized, engaging, and measurable learning solutions.",
+    description: "Drive business success with a world-class L&D program that is aligned, localized, and measurable.",
     problems: [
-      "Low engagement rates",
-      "Inconsistent training quality",
-      "Global deployment challenges",
-      "Limited ROI visibility",
-      "Outdated content"
+      "We develop tailored e-learning content that directly addresses your specific business goals, ensuring your training is effective and impactful.",
+      "Effortlessly localize all learning materials for different subsidiaries, ensuring cultural relevance and language accessibility for every employee, everywhere.",
+      "Receive detailed training impact reports that quantify learning outcomes, allowing business leaders to clearly understand the return on their investment in training."
     ],
     benefits: [
       "Increased completion rates",
@@ -48,13 +46,11 @@ const personas = [
     id: "educational",
     title: "Educational Organizations",
     icon: GraduationCap,
-    description: "Modernize your curriculum with accessible, engaging, and technologically advanced learning materials.",
+    description: "Elevate your curriculum with engaging digital formats that promote equal access and future-proof your institution's offerings.",
     problems: [
-      "Digital transformation needs",
-      "Accessibility requirements",
-      "Student engagement",
-      "Content scalability",
-      "Technology integration"
+      " We transform your existing materials into multi-media rich, interactive e-learning, significantly increasing student engagement and knowledge retention.",
+      "Get expert support to adapt and develop courses that adhere to accessibility standards, ensuring all learners participate equally regardless of ability.",
+      "Our AI-driven instructional design consulting and expertise ensure your content leverages the latest technology and formats, keeping your programs relevant and impactful for future generations."
     ],
     benefits: [
       "Modern learning experiences",
@@ -67,13 +63,10 @@ const personas = [
     id: "training",
     title: "Training Institutions",
     icon: Users,
-    description: "Deliver professional training programs with efficiency, consistency, and measurable results.",
-    problems: [
-      "Content production delays",
-      "Quality inconsistency",
-      "Limited resources",
-      "Certification tracking",
-      "SME collaboration"
+    description: "Maximize your reach and efficiently capture expert knowledge while building a distinct institutional brand.",
+    problems: [ 
+      "Accelerate your production cycle to launch courses in multiple languages quickly, expanding your audience and market share.",
+      "We implement a clear, streamlined collaboration and review process so your Subject Matter Experts' (SMEs) knowledge is accurately captured without wasted time or effort."
     ],
     benefits: [
       "Rapid content production",
@@ -121,20 +114,62 @@ export default function SolutionsPage() {
               variants={fadeInUp}
               className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl"
             >
-              Tailored Solutions for{" "}
+              Comprehensive <br /> E-Learning {" "}
               <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                Every Learning Need
+                Solutions for Every Organization
               </span>
             </motion.h1>
             <motion.p
               variants={fadeInUp}
               className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"
             >
-              Choose your path to transformative learning experiences with our specialized solutions designed for your unique challenges.
+              At the core of effective training and education is a commitment to quality, accessibility, and measurable results. We empower organizations across Africa and globally to deliver exceptional digital learning experiences tailored to your unique goals.
             </motion.p>
           </motion.div>
         </div>
       </div>
+
+        {/* Challenge → Solution → Benefit table */}
+                <div className="my-12">
+                  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div className="rounded-2xl bg-linear-to-r from-blue-600 to-cyan-600 p-8 shadow ring-1 ring-blue-700">
+                      <h3 className="text-2xl font-bold text-white">Solutions for LMS Administrators</h3>
+                      <p className="mt-2 text-white/90">We understand that a successful course rollout starts with flawless technical integration and dependable support.</p>
+      
+                      <div className="mt-6 overflow-x-auto">
+                        <table className="min-w-full table-auto divide-y divide-blue-500/20">
+                          <thead className="bg-white">
+                            <tr>
+                              <th scope="col" className="px-4 py-3 text-left text-sm font-semibold text-blue-600">Your Challenge</th>
+                              <th scope="col" className="px-4 py-3 text-left text-sm font-semibold text-blue-600">Our Solution</th>
+                              <th scope="col" className="px-4 py-3 text-left text-sm font-semibold text-blue-600">Your Benefit</th>
+                            </tr>
+                          </thead>
+                          <tbody className="bg-transparent divide-y divide-blue-500/20">
+                            <tr>
+                              <td className="px-4 py-4 align-top text-sm text-white">Sourcing Quality Content</td>
+                              <td className="px-4 py-4 text-sm text-white/90">End-to-End E-Learning Development focusing on technical standards.</td>
+                              <td className="px-4 py-4 text-sm text-white/90">Easy Integration: Source high-quality, SCORM-compliant courses that effortlessly plug into any Learning Management System.</td>
+                            </tr>
+      
+                            <tr>
+                              <td className="px-4 py-4 align-top text-sm text-white">Technical Integration</td>
+                              <td className="px-4 py-4 text-sm text-white/90">Collaborative Content Deployment with dedicated project managers.</td>
+                              <td className="px-4 py-4 text-sm text-white/90">Smooth Rollouts: Ensure a smooth technical setup with expert guidance, avoiding deployment errors and downtime.</td>
+                            </tr>
+      
+                            <tr>
+                              <td className="px-4 py-4 align-top text-sm text-white">Project Visibility</td>
+                              <td className="px-4 py-4 text-sm text-white/90">Timely and Transparent Project Updates and communication.</td>
+                              <td className="px-4 py-4 text-sm text-white/90">Coordinated Launch: Receive real-time progress reports to perfectly coordinate internal communications and learner rollouts.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
 
       {/* Personas Grid */}
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
@@ -232,6 +267,7 @@ export default function SolutionsPage() {
         </div>
       </div>
 
+     
       {/* Footer CTA */}
       <div className="relative isolate bg-linear-to-b from-blue-50 to-white py-16 dark:from-gray-900 dark:to-gray-800">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -242,10 +278,10 @@ export default function SolutionsPage() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Ready to Transform Your Learning Experience?
+             {"Ready to discuss how to transform your organization's learning landscape?"}
             </h2>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-              Let&apos;s discuss how we can help you achieve your learning objectives.
+              Learn how we can help you achieve your learning objectives.
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
@@ -10,26 +10,32 @@ import ProcessPreview from "@/components/ProcessPreview";
 import SocialProof from "@/components/SocialProof";
 import FooterCTA from "@/components/FooterCTA";
 
-// Fix hydration issues by using constant values
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
+// Trusted Partners Logo
+import logo1 from "@/public/assets/ta.png";
+import logo2 from "@/public/assets/unnamed (1).png";
+import logo3 from "@/public/assets/unnamed.png"; 
 
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
+
+// Fix hydration issues by using constant values
+// const fadeIn = {
+//   hidden: { opacity: 0, y: 20 },
+//   visible: { opacity: 1, y: 0 },
+// };
+
+// const stagger = {
+//   hidden: {},
+//   visible: {
+//     transition: {
+//       staggerChildren: 0.1,
+//     },
+//   },
+// };
 
 const trustLogos = [
-  { src: "/logos/placeholder1.svg", alt: "Company 1" },
-  { src: "/logos/placeholder2.svg", alt: "Company 2" },
-  { src: "/logos/placeholder3.svg", alt: "Company 3" },
-  { src: "/logos/placeholder4.svg", alt: "Company 4" },
+  { src: logo3, alt: "Mammoth Interractive Learning" },
+  { src: logo2, alt: "UBA" },
+  { src: "https://oakvale.10web.me/wp-content/uploads/2025/03/Oakvale-Learning-Logo-final-Beige.svg", alt: "Oakvale" },
+  { src: logo1, alt: "Transform Academy" },
 ];
  
 

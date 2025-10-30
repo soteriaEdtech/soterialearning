@@ -31,7 +31,7 @@ const badges = [
 
 export default function SocialProof() {
   return (
-    <section className="relative py-24 sm:py-32 bg-linear-to-b from-gray-50 to-white">
+    <section className="relative py-24 sm:py-32 bg-linear-to-b from-gray-100 to-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

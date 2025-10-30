@@ -29,19 +29,19 @@ const ServicesSection = () => {
   const services = [
     {
       title: 'Course Development',
-      description: 'Custom learning experiences designed for engagement and retention, with mobile-first approach.',
+      description: 'Whether you\'re building a massive online course (MOOC) or internal training, we provide the building blocks for success.',
       icon: <Book className="h-full w-full" />,
       color: '#4F46E5'
     },
     {
-      title: 'Multimedia Production',
-      description: 'High-quality video content and interactive elements that enhance learning outcomes.',
+      title: 'Strategic E-Learning Outsourcing',
+      description: 'Scale your development capacity instantly without compromising on quality or budget.',
       icon: <Video className="h-full w-full" />,
       color: '#EA580C'
     },
     {
       title: 'Content Localization',
-      description: 'Professional translation and cultural adaptation services for global reach.',
+      description: 'Make your training accessible and culturally relevant to every employee and learner, no matter their location.',
       icon: <Globe className="h-full w-full" />,
       color: '#059669'
     }

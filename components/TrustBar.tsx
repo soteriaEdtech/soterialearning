@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 interface TrustBarProps {
   logos: {
-    src: string;
+    src: any;
     alt: string;
   }[];
 }

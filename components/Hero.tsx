@@ -26,9 +26,9 @@ const floatingIcons = [
 
 const defaultProps = {
   title: "Transform Your Learning Experience",
-  subtitle: "Expert course development, multimedia production, and localization services that deliver measurable results for your organization.",
+  subtitle: "Cut development timelines. Simplify course creation for your team and experts while building rich, interactive, and high-quality multimedia content faster.",
   primaryCTA: {
-    text: "Book a Discovery Call",
+    text: "Contact Us",
     href: "/contact"
   },
   secondaryCTA: {

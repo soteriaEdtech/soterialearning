@@ -7,7 +7,7 @@ export default function FooterCTA() {
     <section className="relative isolate">
       {/* Background Decoration */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-r from-blue-500/30 via-indigo-500/30 to-purple-500/30 opacity-10" />
+        <div className="absolute inset-0 bg-linear-to-r from-blue-500/60 via-indigo-500/50 to-purple-500/50 opacity-10" />
         <div className="absolute left-0 top-0 -z-10 h-96 w-96 -translate-x-1/2 bg-linear-to-r from-blue-500/50 to-indigo-500/50 opacity-20 blur-3xl" />
         <div className="absolute right-0 bottom-0 -z-10 h-96 w-96 translate-x-1/2 bg-linear-to-r from-indigo-500/50 to-purple-500/50 opacity-20 blur-3xl" />
       </div>
