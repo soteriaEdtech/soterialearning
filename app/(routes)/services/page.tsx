@@ -86,12 +86,12 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative isolate overflow-hidden bg-linear-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="relative isolate overflow-hidden bg-linear-to-b from-blue-50 to-white">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[url('/hero-mesh.svg')] bg-cover bg-center bg-no-repeat opacity-30" />
           <div className="absolute inset-0 bg-[url('/noise-texture.svg')] opacity-10" />
-          <div className="absolute inset-0 bg-linear-to-b from-white/80 via-blue-50/50 to-white dark:from-gray-900/90 dark:via-gray-900/50 dark:to-gray-800/90" />
+          <div className="absolute inset-0 bg-linear-to-b from-white/80 via-blue-50/50 to-white" />
         </div>
 
         {/* Hero Content */}
@@ -103,7 +103,7 @@ export default function ServicesPage() {
           >
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl"
+              className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
             >
              Your End-to-End <br/> {" "}
               <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
@@ -112,7 +112,7 @@ export default function ServicesPage() {
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"
+              className="mt-6 text-lg leading-8 text-gray-600 "
             >
               Transforming traditional content into dynamic, accessible, and measurable digital learning experiences requires specialized expertise. We offer a full spectrum of services to empower your organization, whether you need a single custom course or a scalable, long-term development partner.
             </motion.p>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: service.delay }}
-              className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-200/50 transition-all hover:shadow-xl dark:bg-gray-800 dark:ring-gray-800"
+              className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-200/50 transition-all hover:shadow-xl"
             >
               {/* Background Gradient */}
               <div className="absolute -right-20 -top-20 h-40 w-40 rotate-12 transform opacity-0 transition-opacity duration-300 group-hover:opacity-10">
@@ -143,10 +143,10 @@ export default function ServicesPage() {
               </div>
 
               {/* Content */}
-              <h3 className="mt-6 text-2xl font-bold text-gray-900 dark:text-white">
+              <h3 className="mt-6 text-2xl font-bold text-gray-900">
                 {service.title}
               </h3>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
+              <p className="mt-2 text-gray-600">
                 {service.description}
               </p>
 
@@ -159,7 +159,7 @@ export default function ServicesPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: service.delay + (index * 0.1) }}
-                    className="flex items-center gap-3 text-gray-600 dark:text-gray-300"
+                    className="flex items-center gap-3 text-gray-600"
                   >
                     <Sparkles className="h-5 w-5 text-blue-600" />
                     {feature}
@@ -230,7 +230,7 @@ export default function ServicesPage() {
          
 
       {/* Contact CTA Section */}
-      <div className="relative isolate bg-linear-to-b from-gray-50 to-white py-16 dark:from-gray-900 dark:to-gray-800">
+      <div className="relative isolate bg-linear-to-b from-gray-50 to-white py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -238,10 +238,10 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             className="mx-auto max-w-2xl text-center"
           >
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">
               Ready to Transform Your Learning Programs?
             </h2>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+            <p className="mt-4 text-lg text-gray-600">
               Book a consultation to discuss your specific needs and discover how we can help.
             </p>
             <motion.div

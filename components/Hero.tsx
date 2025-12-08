@@ -64,7 +64,7 @@ export default function Hero({
         />
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-linear-to-b from-white/80 via-blue-50/50 to-white dark:from-gray-900/90 dark:via-gray-900/50 dark:to-gray-800/90" />
+        <div className="absolute inset-0 bg-linear-to-b from-white/80 via-blue-50/50 to-white" />
         
         {/* Grid Pattern */}
         <div 
@@ -120,7 +120,7 @@ export default function Hero({
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl md:text-7xl">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl md:text-7xl">
               <span className="block">
                 Transform Your{" "}
                 <span className="relative inline-block">
@@ -131,7 +131,7 @@ export default function Hero({
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 1, delay: 0.5 }}
-                    className="absolute bottom-0 left-0 z-0 h-3 w-full origin-left bg-blue-100 dark:bg-blue-900/20"
+                    className="absolute bottom-0 left-0 z-0 h-3 w-full origin-left bg-blue-100 "
                   />
                 </span>
               </span>
@@ -145,7 +145,7 @@ export default function Hero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"
+            className="mt-6 text-lg leading-8 text-gray-600"
           >
             {subtitle}
           </motion.p>
@@ -160,14 +160,14 @@ export default function Hero({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href={primaryCTA.href}
-              className="inline-flex items-center justify-center rounded-full bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-lg transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+              className="inline-flex items-center justify-center rounded-full bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-lg transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
             >
               {primaryCTA.text}
             </motion.a>
             <motion.a
               whileHover={{ x: 5 }}
               href={secondaryCTA.href}
-              className="group inline-flex items-center gap-2 text-base font-semibold text-gray-900 dark:text-white"
+              className="group inline-flex items-center gap-2 text-base font-semibold text-gray-900"
             >
               {secondaryCTA.text}
               <motion.span
@@ -196,7 +196,7 @@ export default function Hero({
             transition={{ duration: 2 }}
             d="M0,32 C320,72 480,72 720,32 C960,-8 1120,-8 1440,32 L1440,74 L0,74 Z"
             fill="white"
-            className="dark:fill-gray-800"
+            className=""
           />
         </svg>
       </div>

@@ -95,12 +95,12 @@ export default function SolutionsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative isolate overflow-hidden bg-linear-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="relative isolate overflow-hidden bg-linear-to-b from-blue-50 to-white">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[url('/hero-mesh.svg')] bg-cover bg-center bg-no-repeat opacity-30" />
           <div className="absolute inset-0 bg-[url('/noise-texture.svg')] opacity-10" />
-          <div className="absolute inset-0 bg-linear-to-b from-white/80 via-blue-50/50 to-white dark:from-gray-900/90 dark:via-gray-900/50 dark:to-gray-800/90" />
+          <div className="absolute inset-0 bg-linear-to-b from-white/80 via-blue-50/50 to-white" />
         </div>
 
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
@@ -112,7 +112,7 @@ export default function SolutionsPage() {
           >
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl"
+              className="text-4xl font-bold tracking-tight text-gray-900sm:text-6xl"
             >
               Comprehensive <br /> E-Learning {" "}
               <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
@@ -121,7 +121,7 @@ export default function SolutionsPage() {
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"
+              className="mt-6 text-lg leading-8 text-gray-600"
             >
               At the core of effective training and education is a commitment to quality, accessibility, and measurable results. We empower organizations across Africa and globally to deliver exceptional digital learning experiences tailored to your unique goals.
             </motion.p>
@@ -181,7 +181,7 @@ export default function SolutionsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
+              className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:shadow-lg"
             >
               {/* Decorative Background */}
               <div className="absolute right-0 top-0 h-24 w-24 opacity-10">
@@ -195,16 +195,16 @@ export default function SolutionsPage() {
                   <persona.icon className="h-6 w-6 text-white" />
                 </div>
 
-                <h2 className="mt-6 text-2xl font-bold text-gray-900 dark:text-white">
+                <h2 className="mt-6 text-2xl font-bold text-gray-900">
                   {persona.title}
                 </h2>
-                <p className="mt-2 text-gray-600 dark:text-gray-300">
+                <p className="mt-2 text-gray-600">
                   {persona.description}
                 </p>
 
                 {/* Problems We Solve */}
                 <div className="mt-8">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-gray-900 ">
                     Problems We Solve
                   </h3>
                   <ul className="mt-4 space-y-3">
@@ -215,7 +215,7 @@ export default function SolutionsPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        className="flex items-center gap-3 text-gray-600 dark:text-gray-300"
+                        className="flex items-center gap-3 text-gray-600 "
                       >
                         <CheckCircle className="h-5 w-5 text-blue-600" />
                         {problem}
@@ -226,7 +226,7 @@ export default function SolutionsPage() {
 
                 {/* Benefits */}
                 <div className="mt-8">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-gray-900 ">
                     Key Benefits
                   </h3>
                   <div className="mt-4 grid grid-cols-2 gap-4">
@@ -237,9 +237,9 @@ export default function SolutionsPage() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        className="rounded-lg bg-gray-50 p-4 dark:bg-gray-800"
+                        className="rounded-lg bg-gray-50 p-4"
                       >
-                        <p className="text-sm text-gray-900 dark:text-white">{benefit}</p>
+                        <p className="text-sm text-gray-900 ">{benefit}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -269,7 +269,7 @@ export default function SolutionsPage() {
 
      
       {/* Footer CTA */}
-      <div className="relative isolate bg-linear-to-b from-blue-50 to-white py-16 dark:from-gray-900 dark:to-gray-800">
+      <div className="relative isolate bg-linear-to-b from-blue-50 to-white py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -277,10 +277,10 @@ export default function SolutionsPage() {
             viewport={{ once: true }}
             className="mx-auto max-w-2xl text-center"
           >
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 ">
              {"Ready to discuss how to transform your organization's learning landscape?"}
             </h2>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+            <p className="mt-4 text-lg text-gray-600 ">
               Learn how we can help you achieve your learning objectives.
             </p>
             <motion.div

@@ -21,12 +21,22 @@ const schema = yup.object({
   languages: yup.array().of(yup.string()).default([]),
 }).required();
 
+emailjs.init({
+  publicKey: 'YOUR_PUBLIC_KEY',
+  // Do not allow headless browsers
+  blockHeadless: true, 
+  limitRate: { 
+    id: 'app', 
+    throttle: 10000,
+  },
+});
+
 export default function ContactPage() {
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
-
+  
   const languages = [
     "English", "Spanish", "French", "German", "Chinese", "Japanese", "Arabic", "Portuguese"
   ];
@@ -62,7 +72,7 @@ export default function ContactPage() {
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data);
     return;
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', '#myForm').then(
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', '').then(
   (response) => {
     console.log('SUCCESS!', response.status, response.text);
   },
@@ -72,15 +82,6 @@ export default function ContactPage() {
 );
   };
 
-emailjs.init({
-  publicKey: 'YOUR_PUBLIC_KEY',
-  // Do not allow headless browsers
-  blockHeadless: true, 
-  limitRate: { 
-    id: 'app', 
-    throttle: 10000,
-  },
-});
 
   return (
     <div className="min-h-screen">
