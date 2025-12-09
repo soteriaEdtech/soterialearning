@@ -18,13 +18,17 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed w-full bg-blue-600 backdrop-blur-sm z-50 border-b border-zinc-100">
+    <header className="fixed w-full z-50 backdrop-blur-md bg-black/40" 
+      style={{
+        backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%)`,
+        borderBottom: '1px solid rgba(255,255,255,0.1)'
+      }}>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="shrink-0">
-            <Link href="/" className="font-bold text-xl text-white flex items-center gap-2">
+            <Link href="/" className="font-bold text-xl text-white flex items-center gap-2 hover:opacity-80 transition-opacity">
               {/* <Image src={logo} alt="logo" className='w-8'/> */}
-             <p> Soteria Learning </p>
+             <p className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent"> Soteria Learning </p>
             </Link>
           </div>
           
@@ -34,13 +38,13 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-white transition-all duration-200 ease-out hover:text-orange-300 relative group"
+                className="text-sm font-medium text-gray-200 transition-all duration-200 ease-out hover:text-cyan-300 relative group"
               >
                 {item.name}
-                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-orange-300 transform scale-x-0 origin-left transition-transform duration-200 ease-out group-hover:scale-x-100" />
+                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-300 transform scale-x-0 origin-left transition-transform duration-200 ease-out group-hover:scale-x-100" />
               </Link>
             ))}
-            <button className="text-sm font-bold text-blue-600 bg-white px-2 py-1 rounded-lg transition-all duration-200 ease-out hover:bg-orange-400 hover:text-zinc-900 hover:scale-105 active:scale-95">
+            <button className="text-sm font-bold text-white bg-gradient-to-r from-blue-500 to-cyan-500 px-4 py-2 rounded-lg transition-all duration-200 ease-out hover:shadow-lg hover:shadow-cyan-500/50 hover:scale-105 active:scale-95">
               Get Started
             </button>
           </div>
@@ -49,7 +53,7 @@ export default function Header() {
           <div className="flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-orange-300"
+              className="text-gray-200 hover:text-cyan-300 transition-colors"
             >
               <span className="sr-only">Open menu</span>
               {isOpen ? (
@@ -73,14 +77,13 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-base font-medium text-white transition-all duration-200 ease-out hover:bg-orange-500 hover:text-zinc-900 hover:pl-4 relative overflow-hidden group"
+                  className="block px-3 py-2 text-base font-medium text-gray-200 transition-all duration-200 ease-out hover:bg-cyan-500/20 hover:text-cyan-300 hover:pl-4 rounded-md relative overflow-hidden group"
                 >
                   <span className="relative z-10">{item.name}</span>
-                  <span className="absolute inset-0 bg-orange-500 transform -translate-x-full transition-transform duration-200 ease-out group-hover:translate-x-0" />
                 </Link>
               ))}
-              <button className="block w-full px-3 py-2 text-left text-base font-medium text-orange-500 transition-all duration-200 ease-out hover:bg-orange-500 hover:text-white rounded-md">
-                EN
+              <button className="block w-full px-3 py-2 text-left text-base font-medium bg-gradient-to-r from-blue-500 to-cyan-500 text-white transition-all duration-200 ease-out hover:shadow-lg hover:shadow-cyan-500/50 rounded-md">
+                Get Started
               </button>
             </div>
           </div>

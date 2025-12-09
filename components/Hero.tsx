@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { BookOpen, Globe, Code, Sparkles, Lightbulb, ArrowRight } from "lucide-react";
-
+import hero from '../public/assets/hero.jpg';
 interface HeroProps {
   title?: string;
   subtitle?: string;
@@ -44,53 +44,27 @@ export default function Hero({
   secondaryCTA = defaultProps.secondaryCTA 
 }: HeroProps) {
   return (
-    <div className="relative isolate min-h-[90vh] overflow-hidden">
-      {/* Background Elements */}
+    <div 
+      className="relative isolate min-h-[90vh] overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ 
+        backgroundImage: `url('${hero.src}')`,
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Overlay Layer */}
       <div className="absolute inset-0 -z-10">
-        {/* Modern Mesh Gradient Background */}
-        <div 
-          className="absolute inset-0 bg-[url('/hero-mesh.svg')] bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundBlendMode: 'soft-light',
-          }}
-        />
+        {/* Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
         
-        {/* Noise Texture Overlay */}
-        <div 
-          className="absolute inset-0 bg-[url('/noise-texture.svg')] opacity-20"
-          style={{
-            backgroundBlendMode: 'overlay',
-          }}
-        />
-        
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-linear-to-b from-white/80 via-blue-50/50 to-white" />
-        
-        {/* Grid Pattern */}
-        <div 
-          className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-30 mask-[linear-gradient(180deg,white,rgba(255,255,255,0))]"
-        />
+        {/* Additional Subtle Diagonal Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
 
-        {/* Gradient Spheres */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute -left-[50%] top-0 h-[1000px] w-[1000px] rounded-full bg-gradient-radial from-blue-400 to-transparent"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{ duration: 2, delay: 1, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute -right-[50%] bottom-0 h-[1000px] w-[1000px] rounded-full bg-gradient-radial from-purple-400 to-transparent"
-        />
-
-        {/* Floating Icons */}
+        {/* Floating Icons - Subtle Accent */}
         {floatingIcons.map(({ Icon, delay, x, y }, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 0.6, y: 0 }}
+            animate={{ opacity: 0.15, y: 0 }}
             transition={{
               delay,
               duration: 1,
@@ -100,11 +74,9 @@ export default function Hero({
             className="absolute"
             style={{ left: x, top: y }}
           >
-            <Icon className="h-8 w-8 text-blue-600" />
+            <Icon className="h-12 w-12 text-white" />
           </motion.div>
         ))}
-
-      
       </div>
 
       {/* Main Content */}
@@ -120,22 +92,22 @@ export default function Hero({
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl md:text-7xl">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl text-white">
               <span className="block">
                 Transform Your{" "}
                 <span className="relative inline-block">
-                  <span className="relative z-10 bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                  <span className="relative z-10 bg-linear-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                     Learning
                   </span>
                   <motion.span
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 1, delay: 0.5 }}
-                    className="absolute bottom-0 left-0 z-0 h-3 w-full origin-left bg-blue-100 "
+                    className="absolute bottom-0 left-0 z-0 h-3 w-full origin-left bg-blue-500/30"
                   />
                 </span>
               </span>
-              <span className="mt-2 block bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              <span className="mt-2 block bg-linear-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                 Experience
               </span>
             </h1>
@@ -145,7 +117,7 @@ export default function Hero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-6 text-lg leading-8 text-gray-600"
+            className="mt-6 text-lg leading-8 text-gray-100"
           >
             {subtitle}
           </motion.p>
@@ -160,14 +132,14 @@ export default function Hero({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href={primaryCTA.href}
-              className="inline-flex items-center justify-center rounded-full bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-lg transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 px-8 py-3 text-base font-medium text-white shadow-lg hover:shadow-xl transition-all hover:from-blue-600 hover:to-cyan-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black"
             >
               {primaryCTA.text}
             </motion.a>
             <motion.a
               whileHover={{ x: 5 }}
               href={secondaryCTA.href}
-              className="group inline-flex items-center gap-2 text-base font-semibold text-gray-900"
+              className="group inline-flex items-center gap-2 text-base font-semibold text-white hover:text-blue-300 transition-colors"
             >
               {secondaryCTA.text}
               <motion.span
