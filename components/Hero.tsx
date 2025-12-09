@@ -38,7 +38,7 @@ const defaultProps = {
 };
 
 export default function Hero({ 
-  title = defaultProps.title,
+  // title = defaultProps.title,
   subtitle = defaultProps.subtitle,
   primaryCTA = defaultProps.primaryCTA,
   secondaryCTA = defaultProps.secondaryCTA 
@@ -54,10 +54,10 @@ export default function Hero({
       {/* Overlay Layer */}
       <div className="absolute inset-0 -z-10">
         {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/50 to-black/70" />
         
         {/* Additional Subtle Diagonal Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/40 to-transparent" />
 
         {/* Floating Icons - Subtle Accent */}
         {floatingIcons.map(({ Icon, delay, x, y }, index) => (
@@ -132,7 +132,7 @@ export default function Hero({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href={primaryCTA.href}
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 px-8 py-3 text-base font-medium text-white shadow-lg hover:shadow-xl transition-all hover:from-blue-600 hover:to-cyan-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black"
+              className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-blue-500 to-cyan-500 px-8 py-3 text-base font-medium text-white shadow-lg hover:shadow-xl transition-all hover:from-blue-600 hover:to-cyan-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black"
             >
               {primaryCTA.text}
             </motion.a>

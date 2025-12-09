@@ -1,9 +1,9 @@
 "use client";
 import Link from 'next/link';
-import { Menu } from '@headlessui/react';
+// import { Menu } from '@headlessui/react';
 import { useState } from 'react';
-import logo from '../public/logos/main.jpg';
-import Image from 'next/image';
+// import logo from '../public/logos/main.jpg';
+// import Image from 'next/image';
 
 const navigation = [
   { name: 'Solutions', href: '/solutions' },
@@ -28,7 +28,7 @@ export default function Header() {
           <div className="shrink-0">
             <Link href="/" className="font-bold text-xl text-white flex items-center gap-2 hover:opacity-80 transition-opacity">
               {/* <Image src={logo} alt="logo" className='w-8'/> */}
-             <p className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent"> Soteria Learning </p>
+             <p className="bg-linear-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent"> Soteria Learning </p>
             </Link>
           </div>
           
@@ -41,10 +41,10 @@ export default function Header() {
                 className="text-sm font-medium text-gray-200 transition-all duration-200 ease-out hover:text-cyan-300 relative group"
               >
                 {item.name}
-                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-300 transform scale-x-0 origin-left transition-transform duration-200 ease-out group-hover:scale-x-100" />
+                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-linear-to-r from-blue-400 to-cyan-300 transform scale-x-0 origin-left transition-transform duration-200 ease-out group-hover:scale-x-100" />
               </Link>
             ))}
-            <button className="text-sm font-bold text-white bg-gradient-to-r from-blue-500 to-cyan-500 px-4 py-2 rounded-lg transition-all duration-200 ease-out hover:shadow-lg hover:shadow-cyan-500/50 hover:scale-105 active:scale-95">
+            <button className="text-sm font-bold text-white bg-linear-to-r from-blue-500 to-cyan-500 px-4 py-2 rounded-lg transition-all duration-200 ease-out hover:shadow-lg hover:shadow-cyan-500/50 hover:scale-105 active:scale-95">
               Get Started
             </button>
           </div>
@@ -82,7 +82,7 @@ export default function Header() {
                   <span className="relative z-10">{item.name}</span>
                 </Link>
               ))}
-              <button className="block w-full px-3 py-2 text-left text-base font-medium bg-gradient-to-r from-blue-500 to-cyan-500 text-white transition-all duration-200 ease-out hover:shadow-lg hover:shadow-cyan-500/50 rounded-md">
+              <button className="block w-full px-3 py-2 text-left text-base font-medium bg-linear-to-r from-blue-500 to-cyan-500 text-white transition-all duration-200 ease-out hover:shadow-lg hover:shadow-cyan-500/50 rounded-md">
                 Get Started
               </button>
             </div>
